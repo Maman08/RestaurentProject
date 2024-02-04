@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Navbar from './components/Navbar';
+import Hero from './components/Hero';
+import Services from './components/Services';
+import Restaurant from './components/Restaurant';
+import Dining from './components/Dining';
+import Footer from './components/Footer';
+import PerticularRest from './components/PerticularRest'; 
+import Delivery from './components/Delivery';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Navbar />
+      <Routes>
+        <Route exact path="/" element={<Hero />} />
+        
+        <Route path="/restaurant" element={<Restaurant />} />
+        <Route path="/dining" element={<Dining />} />
+        <Route path="/restaurant/:id" element={<PerticularRest />} />
+        {/* Dining.jsx jo id bhejega uske basis pe  wo id wala restaurent show krenge show krenge..... */}
+        <Route path="/delivery" element={<Delivery />} />
+      </Routes>
+      <Footer />
+    </Router>
   );
-}
+};
 
 export default App;
