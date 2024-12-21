@@ -34,3 +34,7 @@ Make sure you have the following installed:
 5. Open your browser and navigate to:
    ```bash
    http://localhost:3000
+
+![alt text](image.png)
+![alt text](image-2.png)
+![alt text](image-1.png)
